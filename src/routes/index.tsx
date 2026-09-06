@@ -459,12 +459,12 @@ function Index() {
             ].map((m) => (
               <button
                 key={m.label}
-                onClick={() =>
-                  setRegion(
-                    REGIONS.find((r) => r.name.startsWith(m.label.split(" ")[0])) ??
-                      REGIONS[0],
-                  )
-                }
+                onClick={() => {
+                  const key = m.label.split(" ")[0] ?? m.label;
+                  const found = REGIONS.find((r) => r.name.startsWith(key));
+                  if (found) setRegion(found);
+                }}
+
                 className="group absolute -translate-x-1/2 -translate-y-1/2"
                 style={{ top: m.top, left: m.left }}
                 aria-label={m.label}
