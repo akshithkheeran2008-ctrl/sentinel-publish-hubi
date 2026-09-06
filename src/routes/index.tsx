@@ -549,7 +549,7 @@ function Index() {
               <div>
                 <p className="font-medium">{r.name}</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  {r.summary.split(".")[0].slice(0, 42)}…
+                  {r.summary.split(".")[0]!.slice(0, 42)}…
                 </p>
               </div>
               <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
