@@ -256,8 +256,8 @@ function StatTile({
 /* --------------------------------- page --------------------------------- */
 
 function Index() {
-  const [region, setRegion] = useState<Region>(REGIONS[0]);
-  const [district, setDistrict] = useState(DISTRICTS[0]);
+  const [region, setRegion] = useState<Region>(REGIONS[0]!);
+  const [district, setDistrict] = useState(DISTRICTS[0]!);
   const [saved, setSaved] = useState(0);
   const [reportId, setReportId] = useState<string | null>(null);
   const [imageName, setImageName] = useState<string | null>(null);
@@ -655,7 +655,7 @@ function Index() {
               <Select
                 value={district.name}
                 onValueChange={(v) =>
-                  setDistrict(DISTRICTS.find((d) => d.name === v) ?? DISTRICTS[0])
+                  setDistrict(DISTRICTS.find((d) => d.name === v) ?? DISTRICTS[0]!)
                 }
               >
                 <SelectTrigger className="mt-2 w-full rounded-lg bg-secondary/60">
